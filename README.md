@@ -1,70 +1,180 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# MERN Doctor 📝 Appointment App
 
-## Available Scripts
+Doctor Appointment App is a comprehensive platform designed for managing users, doctors, and appointments seamlessly.
 
-In the project directory, you can run:
 
-### `npm start`
+## Features
+User Management
+- Users can create account.
+- Users can login.
+- Users can apply for the role of a doctor.
+- Administrative approval is required for users to become doctors.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Appointment Management
+- Users can create appointments within the system.
+- Automatic notifications are sent to the relevant doctor upon appointment creation.
+- Doctors receive notifications for pending appointment requests.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Notification System
+- Admin is notified of new doctor applications.
+- Users receive notifications regarding the acceptance or rejection of their application for the role of a doctor by the administrator.
+- Users are notified of appointment acceptance or rejection by the doctor.
+## Tech Stack
 
-### `npm test`
+**Client:** React, ReactTypeScript, Redux Toolkit, Material UI, Formik
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**API Handlers:** RTK Query
 
-### `npm run build`
+**Server:** Node, Express
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Database:** Mongo DB
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Screenshots
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![signup](https://i.postimg.cc/bwHV2Bw4/Sign-Up.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Sign in](https://i.postimg.cc/QCzg7c2B/Sign-In.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Dashboard](https://i.postimg.cc/1zPJKcj2/Dashboard.png)
 
-## Learn More
+![Users](https://i.postimg.cc/fRwJMVtm/Users.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Doctors](https://i.postimg.cc/Gpndx2G9/Doctors.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Profile](https://i.postimg.cc/XqzCDFkw/Profile.png)
 
-### Code Splitting
+![Doctor signup](https://i.postimg.cc/0j1cQTw6/Doctor-Sign-Up.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Booking](https://i.postimg.cc/xCCjFYMw/Book-Appointments.png)
 
-### Analyzing the Bundle Size
+![Appointments](https://i.postimg.cc/59GfPnMX/Doctor-Appointments.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Admin Notifications](https://i.postimg.cc/5ycbt2gw/Admin-Notifications.png)
 
-### Making a Progressive Web App
+![Doctor Notification](https://i.postimg.cc/0yhtFKyd/Doctor-Notification.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![User Notification](https://i.postimg.cc/zB8kYCZW/User-Notification.png)
 
-### Advanced Configuration
+## Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To run this project, you will need to add the following environment variables to your .env file
 
-### Deployment
+### Backend ###
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+ NODE_ENV:  development
+ PORT:      5000
+ DATABASE:  Insert your MongoDB database connection link
+```
 
-### `npm run build` fails to minify
+### Frontend ###
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+ REACT_APP_API_URL:  'http://127.0.0.1:5000/api/v1/'
+```
+
+
+
+
+## API Reference
+
+### ROUTES
+
+- Endpoint: `http://127.0.0.1:5000/api/v1/users`
+- Endpoint: `http://127.0.0.1:5000/api/v1/doctors`
+
+## USERS API
+
+#### Signup
+- **Method:** `POST`
+- **Endpoint:** `/signup`
+
+#### Login
+- **Method:** `POST`
+- **Endpoint:** `/login`
+
+#### Get All Users
+- **Method:** `GET`
+- **Endpoint:** `/`
+
+#### Get User
+- **Method:** `GET`
+- **Endpoint:** `/:id`
+
+#### Delete User
+- **Method:** `DELETE`
+- **Endpoint:** `/:id`
+
+#### Verify User
+- **Method:** `GET`
+- **Endpoint:** `/verify-user/:id`
+
+#### Book Appointment
+- **Method:** `POST`
+- **Endpoint:** `/book-appointment`
+
+#### User Appointments
+- **Method:** `GET`
+- **Endpoint:** `/user-appointments/:id`
+
+#### Notifications Seen
+- **Method:** `POST`
+- **Endpoint:** `mark-all-notification-as-seen`
+
+#### Delete Notifications
+- **Method:** `POST`
+- **Endpoint:** `/delete-all-notifications`
+
+#### Change Doctor Status
+- **Method:** `POST`
+- **Endpoint:** `/change-doctor-status`
+
+## DOCTORS API
+
+#### Get All Doctors
+- **Method:** `GET`
+- **Endpoint:** `/`
+
+#### Get All Approved Doctors
+- **Method:** `GET`
+- **Endpoint:** `/approved-doctors`
+
+#### Doctor Signup
+- **Method:** `POST`
+- **Endpoint:** `/signup`
+
+#### Get Doctors
+- **Method:** `GET`
+- **Endpoint:** `/:id`
+
+#### Update Doctor
+- **Method:** `PUT`
+- **Endpoint:** `/:id`
+
+#### Get All Doctor Appointments
+- **Method:** `GET`
+- **Endpoint:** `/appointments/:id`
+
+#### Get Booked Doctor Appointments
+- **Method:** `GET`
+- **Endpoint:** `/booked-appointments/:id`
+
+#### Change Appointment Status
+- **Method:** `POST`
+- **Endpoint:** `/change-appointment-status`
+
+#### Appointment Booking Availability
+- **Method:** `POST`
+- **Endpoint:** `/check-booking-availability`
+
+<div align="center">
+
+---
+
+Made with ❤️ by Muazam
+
+</div>
