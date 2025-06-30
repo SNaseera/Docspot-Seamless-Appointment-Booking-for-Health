@@ -40,8 +40,6 @@ Notification System
 
 ![Sign in](https://i.postimg.cc/QCzg7c2B/Sign-In.png)
 
-![Dashboard](https://i.postimg.cc/1zPJKcj2/Dashboard.png)
-
 ![Users](https://i.postimg.cc/fRwJMVtm/Users.png)
 
 ![Doctors](https://i.postimg.cc/Gpndx2G9/Doctors.png)
