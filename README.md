@@ -35,7 +35,8 @@ Notification System
 
 ## Screenshots
 
-![signup](https://i.postimg.cc/bwHV2Bw4/Sign-Up.png)
+![screenshot](https://github.com/user-attachments/assets/d2d39d4d-204b-46e0-8cc1-04289b015145)
+
 
 ![Sign in](https://i.postimg.cc/QCzg7c2B/Sign-In.png)
 
