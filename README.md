@@ -46,7 +46,6 @@ Notification System
 
 ![Doctors](https://i.postimg.cc/Gpndx2G9/Doctors.png)
 
-![Profile](https://i.postimg.cc/XqzCDFkw/Profile.png)
 
 ![Doctor signup](https://i.postimg.cc/0j1cQTw6/Doctor-Sign-Up.png)
 
