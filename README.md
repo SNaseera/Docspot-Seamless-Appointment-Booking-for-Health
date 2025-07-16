@@ -1,4 +1,5 @@
 
+
 # MERN Doctor 📝 Appointment App
 
 Doctor Appointment App is a comprehensive platform designed for managing users, doctors, and appointments seamlessly.
@@ -35,17 +36,15 @@ Notification System
 
 ## Screenshots
 
-![signup](https://i.postimg.cc/bwHV2Bw4/Sign-Up.png)
+![screenshot](https://github.com/user-attachments/assets/d2d39d4d-204b-46e0-8cc1-04289b015145)
+
 
 ![Sign in](https://i.postimg.cc/QCzg7c2B/Sign-In.png)
-
-![Dashboard](https://i.postimg.cc/1zPJKcj2/Dashboard.png)
 
 ![Users](https://i.postimg.cc/fRwJMVtm/Users.png)
 
 ![Doctors](https://i.postimg.cc/Gpndx2G9/Doctors.png)
 
-![Profile](https://i.postimg.cc/XqzCDFkw/Profile.png)
 
 ![Doctor signup](https://i.postimg.cc/0j1cQTw6/Doctor-Sign-Up.png)
 
@@ -175,6 +174,6 @@ To run this project, you will need to add the following environment variables to
 
 ---
 
-Made with ❤️ by Muazam
+Made with ❤️ by Naseera
 
 </div>
