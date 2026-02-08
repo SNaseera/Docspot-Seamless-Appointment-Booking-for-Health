@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DocSpot Lite - Appointment Booking</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #eff6ff, #f8fafc);
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: #1f2937;
+        }
+
+        .container {
+            max-width: 520px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        label {
+            font-weight: 600;
+            margin-top: 15px;
+            display: block;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .status {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>DocSpot Lite</h1>
+
+<div class="container">
+
+    <label>Doctor</label>
+    <select id="doctor">
+        <option value="">Select Doctor</option>
+        <option value="1">Dr. Rahul Kapoor (Cardiologist)</option>
+        <option value="2">Dr. Ananya Sharma (Dermatologist)</option>
+        <option value="3">Dr. Sanjay Verma (Orthopedic)</option>
+        <option value="4">Dr. Priya Gupta (Gynecologist)</option>
+        <option value="5">Dr. Amit Joshi (Neurologist)</option>
+    </select>
+
+    <label>Patient Name</label>
+    <input type="text" id="patient_name" placeholder="Enter patient name">
+
+    <label>Day</label>
+    <input type="text" id="day" placeholder="Monday">
+
+    <label>Time (HH:MM)</label>
+    <input type="text" id="time" placeholder="16:00">
+
+    <button onclick="bookAppointment()">Book Appointment</button>
+
+    <div id="status" class="status"></div>
+</div>
+
+<script>
+function bookAppointment() {
+    const doctor = document.getElementById("doctor").value;
+    const patientName = document.getElementById("patient_name").value;
+    const day = document.getElementById("day").value;
+    const time = document.getElementById("time").value;
+    const status = document.getElementById("status");
+
+    status.innerText = "";
+    status.className = "status";
+
+    if (!doctor || !patientName || !day || !time) {
+        status.classList.add("error");
+        status.innerText = "Please fill all fields";
+        return;
+    }
+
+    fetch("/api/appointments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            doctor_id: parseInt(doctor),
+            patient_name: patientName,
+            day: day,
+            time: time
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.message) {
+            status.classList.add("success");
+            status.innerText = data.message;
+        } else {
+            status.classList.add("error");
+            status.innerText = data.error;
+        }
+    })
+    .catch(() => {
+        status.classList.add("error");
+        status.innerText = "Server error";
+    });
+}
+</script>
+
+</body>
+</html>
