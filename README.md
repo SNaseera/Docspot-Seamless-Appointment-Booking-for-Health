@@ -1,61 +1,96 @@
+# 🏥 DocSpot Lite – Appointment Booking System
 
+DocSpot Lite is a simple full-stack web application that allows users to book doctor appointments through a clean and user-friendly interface.  
+This project demonstrates frontend–backend integration using REST APIs and is ideal for learning, academic use.
 
-# MERN Doctor 📝 Appointment App
+---
 
-Doctor Appointment App is a comprehensive platform designed for managing users, doctors, and appointments seamlessly.
+##  Features
 
+- List of doctors with specialties  
+- Book appointments by selecting day and time  
+- Frontend validation for inputs  
+- RESTful APIs using Flask  
+- Clean and responsive UI (HTML & CSS)  
+- Lightweight and easy to run locally  
 
-## Features
-User Management
-- Users can create account.
-- Users can login.
-- Users can apply for the role of a doctor.
-- Administrative approval is required for users to become doctors.
+---
 
-Appointment Management
-- Users can create appointments within the system.
-- Automatic notifications are sent to the relevant doctor upon appointment creation.
-- Doctors receive notifications for pending appointment requests.
+##  Tech Stack
 
-Notification System
-- Admin is notified of new doctor applications.
-- Users receive notifications regarding the acceptance or rejection of their application for the role of a doctor by the administrator.
-- Users are notified of appointment acceptance or rejection by the doctor.
-## Tech Stack
+- Frontend: HTML, CSS, JavaScript  
+- Backend: Python (Flask)  
+- API Format: JSON  
+- Database: In-memory storage (demo purpose)
 
-**Client:** React, ReactTypeScript, Redux Toolkit, Material UI, Formik
+---
 
-**API Handlers:** RTK Query
+## 📂 Project Structure
+docspot/
+│
+├── app.py
+└── templates/
+└── index.html
 
-**Server:** Node, Express
+---
 
-**Database:** Mongo DB
+##  How to Run the Project
 
+### 1. Install Flask
+pip install flask
 
+Run the application
+python app.py
 
+Open in browser
+http://127.0.0.1:5000
 
-## Screenshots
+Sample Input
 
-![screenshot](https://github.com/user-attachments/assets/d2d39d4d-204b-46e0-8cc1-04289b015145)
+Doctor: Dr. Rahul Kapoor (Cardiologist)
 
+Patient Name: Ayesha
 
-![Sign in](https://i.postimg.cc/QCzg7c2B/Sign-In.png)
+Day: Monday
 
-![Users](https://i.postimg.cc/fRwJMVtm/Users.png)
+Time: 16:00
 
-![Doctors](https://i.postimg.cc/Gpndx2G9/Doctors.png)
+Output
+Appointment booked successfully
 
+Learning Outcomes
 
-![Doctor signup](https://i.postimg.cc/0j1cQTw6/Doctor-Sign-Up.png)
+Understanding Flask routing and REST APIs
 
-![Booking](https://i.postimg.cc/xCCjFYMw/Book-Appointments.png)
+Connecting frontend forms with backend services
 
-![Appointments](https://i.postimg.cc/59GfPnMX/Doctor-Appointments.png)
+Handling JSON data between client and server
 
-![Admin Notifications](https://i.postimg.cc/5ycbt2gw/Admin-Notifications.png)
+Basic full-stack project structure
 
-![Doctor Notification](https://i.postimg.cc/0yhtFKyd/Doctor-Notification.png)
+Clean UI design with responsive layout
 
-![User Notification](https://i.postimg.cc/zB8kYCZW/User-Notification.png)
+🔮 Future Enhancements
 
+User authentication (login & signup)
 
+Database integration (SQLite / MySQL)
+
+Appointment conflict checking
+
+Doctor availability scheduling
+
+Admin dashboard
+
+Author
+
+Naseera (SNaseera)
+B.Tech CSE (AI & ML)
+GitHub: github.com/SNaseera
+
+📄 License
+
+This project is created for educational and demonstration purposes. 
+
+output :
+<img width="1019" height="759" alt="image" src="https://github.com/user-attachments/assets/4eb1f7c6-ca18-4dbd-9af8-75fa4fbd24cd" />
